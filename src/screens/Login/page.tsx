@@ -39,7 +39,10 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
         return (
             <View style = {[defaultStyle.container, styles.back]}>
                 <View style = { styles.content}>
-                    <View style = { styles.logo }></View>
+                    <Image
+                        source = { require('../../../assets/Logo.png')}
+                        style = { styles.logo }
+                    />
                     <View style = { styles.lineBox}>
                         <View style = {styles.line}></View>
                         <View style = {{flex: 1}}></View>
@@ -53,7 +56,7 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
                             icon = {
                                 <Image 
                                     style = { styles.buttonIcon }
-                                    source = { require('../../../assets/icon.png') } 
+                                    source = { require('../../../assets/steam-square-512.png') } 
                                 />
                             }
                             buttonStyle = {[styles.buttonSize, styles.buttonColor1]} 
