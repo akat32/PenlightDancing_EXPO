@@ -45,13 +45,24 @@ const styles = StyleSheet.create({
         marginBottom: vh(14.5)
     },
     lineFont: {
-
+        color: '#e2e2e2',
+        fontSize: vw(3.8)
+    },
+    notYet: {
+        marginBottom: vh(1.7),
+        fontSize: vw(3.2)
     },
     lineBox: {
-        
+        marginBottom: vh(2.7),
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: vw(82.2)
     },
     line: {
-
+        marginTop: -vw(0.3),
+        width: vw(18.3),
+        height: vw(0.2),
+        backgroundColor: '#fff'
     }
 })
 
