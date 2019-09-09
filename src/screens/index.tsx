@@ -1,1 +1,6 @@
 export { default as LoginScreen } from './Login/page'
+export { default as ProfileScreen } from './Profile/page'
+export { default as VRScreen } from './VR/page'
+export { default as SettingScreen } from './Setting/page'
+export { default as NewsScreen } from './News/page'
+export { default as RankingScreen} from './Rank/page'

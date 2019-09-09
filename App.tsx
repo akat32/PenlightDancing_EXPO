@@ -1,12 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { LoginScreen } from './src/screens'
+
+import { AppNavigation } from './src/navigation/AppNavigator'
 
 export default class App extends React.Component {
   render () {
     return (
-      <LoginScreen/>
+      <AppNavigation/>
     )
   }
 }
+
+//Unable to resolve "react-native-gesture-handler" from "node_modules/react-navigation-stack/lib/module/views/StackView/StackViewLayout.js"
+// Failed building JavaScript bundle.
