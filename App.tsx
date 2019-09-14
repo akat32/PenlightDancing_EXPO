@@ -7,7 +7,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import { TabNavigator } from './src/navigation/BottomTabBar'
 
-import { LoginScreen, ProfileScreen, VRScreen, SettingScreen, NewsScreen, RankingScreen } from './src/screens'
+import { LoginScreen } from './src/screens'
 
 console.disableYellowBox = true;
 
@@ -16,15 +16,6 @@ export default class App extends React.Component {
     return <AppContainor/>
   }
 }
-
-const Home = () => {
-  return (
-    <View>
-      <Text>router Test</Text>
-    </View>
-  )
-}
-
 
 const AppNavigation = createStackNavigator({
   LoginScreen: {
@@ -39,10 +30,6 @@ const AppNavigation = createStackNavigator({
           header: null,
       }),
   },
-})
-
-const AppStackNavigator = createStackNavigator({
-  Home: Home
 })
 
 const AppContainor = createAppContainer(AppNavigation)

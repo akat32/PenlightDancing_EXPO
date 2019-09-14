@@ -5,7 +5,8 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    Image
+    Image,
+    AsyncStorage
 } from 'react-native'
 
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -36,7 +37,13 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
         if (this.state.isClickedSteam) return { color : '#ff2c2c'}
         else return { color : '#0B141A'}
     }
-    GuestLogin () {
+    async GuestLogin () {
+        try {
+            await AsyncStorage.setItem('isGuest', 'true')
+        } catch (e) {
+            console.log(e);
+            alert('게스트 설정을 저장 중, 오류가 발생했습니다.');
+        }
         this.props.navigation.replace('TabNavigator')
     }
     render () {
