@@ -8,7 +8,7 @@ import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 
 const styles = StyleSheet.create({
     back: {
-        backgroundColor: '#000',
+        backgroundColor: '#0b141a',
         justifyContent: 'center'
     },
     content: {
@@ -23,13 +23,15 @@ const styles = StyleSheet.create({
     },
     buttonSize: {
         width: vw(82.2),
-        height: vh(7.5)
+        height: vh(7.5),
+        borderWidth: vw(0.3),
+        borderColor: '#727272'
     },
     buttonIcon: {
         width: vw(6.7),
         height: vw(6.7),
         position: 'absolute',
-        left: vw(14)
+        left: vw(12.5)
     },
     buttonTitle: {
         fontSize: vw(4),
@@ -41,8 +43,8 @@ const styles = StyleSheet.create({
     logo: {
         width: vw(77.8),
         height: vw(45.124),
-        backgroundColor: '#fff',
-        marginBottom: vh(14.5)
+        // backgroundColor: '#fff',
+        marginBottom: vh(10.5)
     },
     lineFont: {
         color: '#e2e2e2',

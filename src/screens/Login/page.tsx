@@ -33,7 +33,7 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
     }
     TextColor () {
         if (this.state.isClickedSteam) return { color : '#ff2c2c'}
-        else return { color : '#000000'}
+        else return { color : '#0B141A'}
     }
     render () {
         return (

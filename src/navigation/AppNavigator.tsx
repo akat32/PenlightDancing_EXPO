@@ -6,7 +6,6 @@ import {
 
 import { LoginScreen, ProfileScreen, VRScreen, SettingScreen, NewsScreen, RankingScreen } from '../screens'
 
-
 import { createStackNavigator } from 'react-navigation-stack';
 import { TabNavigator } from './BottomTabBar'
 
@@ -32,7 +31,7 @@ export const VRStack = createStackNavigator({ VRScreen },
             title: 'VR',
         }),
     }
-)
+) 
 
 export const NewsStack = createStackNavigator({ NewsScreen }, 
     {
@@ -50,17 +49,3 @@ export const SettingStack = createStackNavigator({ SettingScreen },
     }
 )
 
-
-
-
-
-
-export const AppNavigation = createStackNavigator({
-    LoginScreen: LoginScreen,
-    TabNavigator: {
-        screen: TabNavigator,
-        navigationOptions: ({navigation}) => ({
-            header: null,
-        }),
-    },
-})
