@@ -18,6 +18,7 @@ import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 
 interface Iprops { 
     isClickedSteam?: Boolean
+    navigation
 }
 
 interface Istate { 
@@ -34,6 +35,9 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
     TextColor () {
         if (this.state.isClickedSteam) return { color : '#ff2c2c'}
         else return { color : '#0B141A'}
+    }
+    GuestLogin () {
+        this.props.navigation.replace('TabNavigator')
     }
     render () {
         return (
@@ -68,6 +72,7 @@ export default class LoginScreen extends React.Component<Iprops, Istate> {
                             buttonStyle = {[styles.buttonSize, styles.buttonColor2]} 
                             titleStyle = {styles.buttonTitle} 
                             title = "게스트 로그인"
+                            onPress = { ()=> { this.GuestLogin()}}
                         />
                     </View>
                 </View>
