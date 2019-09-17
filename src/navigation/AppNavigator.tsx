@@ -8,8 +8,8 @@ import {
 import { LoginScreen, ProfileScreen, VRScreen, SettingScreen, NewsScreen, RankingScreen } from '../screens'
 import { DefaultProfile } from '../screens/Profile/guestPage'
 import { DefaultRanking } from '../screens/Rank/guestPage'
+import { DefaultSetting } from '../screens/Setting/guestSetting' 
 import { createStackNavigator } from 'react-navigation-stack';
-
 async function isGuest () {
     try {
         let result = await AsyncStorage.getItem('isGuest')
@@ -20,7 +20,7 @@ async function isGuest () {
         console.log(e)
     }
 }
-export const ProfileStack = createStackNavigator( { screen : (isGuest()) ? (DefaultProfile) : (ProfileScreen) },
+export const ProfileStack = createStackNavigator( { screen : (isGuest()) ? (DefaultSetting) : (ProfileScreen) },
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'Profile',
