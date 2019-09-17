@@ -12,7 +12,7 @@ import {
 import { Button, ThemeProvider } from 'react-native-elements';
 
 import { defaultStyle } from '../defaultStyles'
-import { styles } from './style'
+import { styles, guest } from './style'
 
 import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 
@@ -28,7 +28,6 @@ export default class ProfileScreen extends React.Component<Iprops, Istate> {
     render() {
         return (
             <View style = { defaultStyle.container }>
-                
             </View>
         )
     }

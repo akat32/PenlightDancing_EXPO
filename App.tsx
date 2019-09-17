@@ -18,12 +18,12 @@ export default class App extends React.Component {
 }
 
 const AppNavigation = createStackNavigator({
-  LoginScreen: {
-    screen: LoginScreen,
-    navigationOptions: {
-      header: null
-    }
-  },
+  // LoginScreen: {
+  //   screen: LoginScreen,
+  //   navigationOptions: {
+  //     header: null
+  //   }
+  // },
   TabNavigator: {
       screen: TabNavigator,
       navigationOptions: ({navigation}) => ({

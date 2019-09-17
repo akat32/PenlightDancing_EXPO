@@ -1,26 +1,39 @@
 import React from 'react';
 
 import {
-    Text
+    Text,
+    AsyncStorage
 } from 'react-native';
 
 import { LoginScreen, ProfileScreen, VRScreen, SettingScreen, NewsScreen, RankingScreen } from '../screens'
-
+import { DefaultProfile } from '../screens/Profile/guestPage'
+import { DefaultRanking } from '../screens/Rank/guestPage'
 import { createStackNavigator } from 'react-navigation-stack';
-import { TabNavigator } from './BottomTabBar'
 
-export const ProfileStack = createStackNavigator({ ProfileScreen },
+async function isGuest () {
+    try {
+        let result = await AsyncStorage.getItem('isGuest')
+        console.log(result)
+        if( result == 'true') return true
+        else return false
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const ProfileStack = createStackNavigator( { screen : (isGuest()) ? (DefaultProfile) : (ProfileScreen) },
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'Profile',
+            header: null
         }),
     }
 )
 
-export const RankingStack = createStackNavigator({ RankingScreen }, 
+export const RankingStack = createStackNavigator({ screen : (isGuest()) ? (DefaultRanking) : ( RankingScreen) }, 
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'Ranking',
+            header: null
         }),
     }
 )
@@ -37,6 +50,7 @@ export const NewsStack = createStackNavigator({ NewsScreen },
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'News',
+            header: null
         }),
     }
 )
@@ -45,6 +59,7 @@ export const SettingStack = createStackNavigator({ SettingScreen },
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'Setting',
+            header: null
         }),
     }
 )

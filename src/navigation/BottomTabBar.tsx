@@ -18,6 +18,7 @@ const TabNavigator = createBottomTabNavigator(
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
+            backgroundColor : '#151E24',
             tabBarIcon: ({focused, horizontal, tintColor}) => {
                 const {routeName} = navigation.state;
                 let icon = "▲";
@@ -30,7 +31,9 @@ const TabNavigator = createBottomTabNavigator(
 
                 // can use react-native-vector-icons
                 // <Icon name={iconName} size={iconSize} color={iconColor} />
-                return <Text style={{color: focused && "#46c3ad" || "#888"}}>{icon}</Text>
+                return (
+                    <Text style={{color: focused && "#daffc0" || "#a1a5a7"}}>{icon}</Text>
+                )
             }
         }),
         lazy: false,

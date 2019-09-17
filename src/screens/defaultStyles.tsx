@@ -15,4 +15,11 @@ export const defaultStyle = StyleSheet.create({
             }
         })
     },
+    back: {
+        backgroundColor: '#0b141a',
+        justifyContent: 'center'
+    }, 
+    backColor: {
+        backgroundColor: '#0b141a',
+    },
 })
