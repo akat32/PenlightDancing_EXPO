@@ -24,7 +24,7 @@ export const ProfileStack = createStackNavigator( { screen : (isGuest()) ? (Defa
     {
         defaultNavigationOptions: ({navigation}) => ({
             title: 'Profile',
-            header: null
+            header: null,
         }),
     }
 )

@@ -55,7 +55,7 @@ export const DefaultSetting = (props: Iprops) => {
                     </View>
                 </View>
             </View>
-        </View>
-
+        </View> 
     )
 }
+
