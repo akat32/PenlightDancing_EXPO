@@ -11,7 +11,6 @@ import {Icon} from 'react-native-elements'
 import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { ProfileStack, RankingStack, VRStack, NewsStack, SettingStack } from './AppNavigator'
 import { LoginScreen, ProfileScreen, VRScreen, SettingScreen, NewsScreen, RankingScreen } from '../screens'
 import { DefaultProfile } from '../screens/Profile/guestPage'
 import { DefaultRanking } from '../screens/Rank/guestPage'
@@ -30,7 +29,7 @@ async function isGuest () {
 const TabNavigator = createBottomTabNavigator(
     {
         Profile: {
-            screen: (isGuest()) ? (DefaultSetting) : (ProfileScreen),
+            screen: (isGuest()) ? (NewsScreen) : (ProfileScreen),
             navigationOptions: () => ({
                 tabBarIcon: ({tintColor}) => (
                     <Icon
@@ -58,17 +57,13 @@ const TabNavigator = createBottomTabNavigator(
         VR: {
             screen: VRScreen,
             navigationOptions: () => ({
-                tabBarIcon: () => (
-                    <Image source = { require('../../assets/VR_ON.png')} 
-                        style = {{
-                            width: vw(16.5),
-                            height: vw(16.5),
-                            borderRadius: vw(15),
-                            marginBottom: vh(3)
-                    }}/>
-                ),
-                tabBarLabel: () => (
-                    <Text></Text>
+                tabBarIcon: ({tintColor}) => (
+                    <Icon
+                        name='google-cardboard'
+                        type="material-community"
+                        color= {tintColor}
+                        size={vw(8.8)}
+                    />
                 )
             })
         },
