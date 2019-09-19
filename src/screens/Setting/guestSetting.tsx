@@ -26,6 +26,10 @@ interface Istate {
 // 이미지 밑에 그림자.
 // 프로필 박스 밑에 그림자
 export const DefaultSetting = (props: Iprops) => {
+    function logOut () {
+        alert('로그인 화면으로 돌아갑니다.')
+        props.navigation.replace('LoginScreen')
+    }
     return (
         <View style = {[defaultStyle.container, defaultStyle.back]}>
             <View style = { guest.contentBox}>
@@ -50,8 +54,14 @@ export const DefaultSetting = (props: Iprops) => {
                     <View style = { guest.lineBox}>
                         <Text style = {guest.menuText}>푸쉬 알림 설정</Text>
                     </View>
-                    <View style = { guest.noLineBox}>
-                        <Text style = {[guest.menuText, { color : '#ff4141'}]}>로그아웃</Text>
+                    <View 
+                        style = { guest.noLineBox} 
+                    >
+                        <Text 
+                            onPress = { ()=> {
+                                logOut()
+                            }}
+                            style = {[guest.menuText, { color : '#ff4141'}]}>로그아웃</Text>
                     </View>
                 </View>
             </View>
