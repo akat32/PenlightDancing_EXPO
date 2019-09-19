@@ -29,7 +29,7 @@ async function isGuest () {
 const TabNavigator = createBottomTabNavigator(
     {
         Profile: {
-            screen: (isGuest()) ? (NewsScreen) : (ProfileScreen),
+            screen: (isGuest()) ? (DefaultProfile) : (ProfileScreen),
             navigationOptions: () => ({
                 tabBarIcon: ({tintColor}) => (
                     <Icon
@@ -95,7 +95,7 @@ const TabNavigator = createBottomTabNavigator(
         }
     },
     {
-        
+        initialRouteName: 'VR',        
         tabBarOptions: {
             lazy: false,
             activeTintColor: '#daffc0',
