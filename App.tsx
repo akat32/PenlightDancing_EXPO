@@ -8,7 +8,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { TabNavigator } from './src/navigation/BottomTabBar'
 
 import { LoginScreen } from './src/screens'
-
+import { Preview } from './src/screens'
 console.disableYellowBox = true;
 
 export default class App extends React.Component {
@@ -24,10 +24,17 @@ const AppNavigation = createStackNavigator({
       header: null
     }
   },
+  Preview: {
+    screen: Preview,
+    navigationOptions: ({navigation}) => ({
+      header: null
+    })
+  },
   TabNavigator: {
       screen: TabNavigator,
       navigationOptions: ({navigation}) => ({
           header: null,
+          
       }),
   },
 })
