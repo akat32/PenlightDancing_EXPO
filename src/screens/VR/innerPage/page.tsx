@@ -14,6 +14,7 @@ import {
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button, ThemeProvider } from 'react-native-elements';
 
+import { Thumbnail } from 'react-native-thumbnail-video';
 import { defaultStyle } from '../../defaultStyles'
 import { styles,headerStyle } from './style'
 
@@ -37,7 +38,7 @@ class PreviewHeader extends React.Component<Iprops, Istate> {
 
     }
     goTabBar () {
-        this.props.navigation.replace('TabNavigator')
+        this.props.navigation.goBack()
     }
     render() {
         return (
@@ -80,6 +81,8 @@ export default class Preview extends React.Component<Iprops, Istate> {
                 <PreviewHeader navigation = { this.props.navigation}/>
                 <View style = {{ position : 'relative', flex: 1}}>
                     <View style = { styles.youtubeSize}>
+                        <Thumbnail showPlayIcon = { false } style= {{ width: '100%', height: '100%' }}  url="https://www.youtube.com/watch?v=9DwzBICPhdM" />
+            
                     </View>
                     <View style = { styles.info }>
                         <View style = {[ styles.contentTextBox, { marginTop : vh(2.8), marginBottom : vh(3)} ]}>

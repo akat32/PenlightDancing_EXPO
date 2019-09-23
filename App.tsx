@@ -9,7 +9,9 @@ import { TabNavigator } from './src/navigation/BottomTabBar'
 
 import { LoginScreen } from './src/screens'
 import { Preview } from './src/screens'
+import { Terms, License } from './src/screens'
 console.disableYellowBox = true;
+
 
 export default class App extends React.Component {
   render () {
@@ -18,18 +20,13 @@ export default class App extends React.Component {
 }
 
 const AppNavigation = createStackNavigator({
-  LoginScreen: {
-    screen: LoginScreen,
-    navigationOptions: {
-      header: null
-    }
-  },
-  Preview: {
-    screen: Preview,
-    navigationOptions: ({navigation}) => ({
-      header: null
-    })
-  },
+  // LoginScreen: {
+  //   screen: LoginScreen,
+  //   navigationOptions: {
+  //     header: null
+  //   }
+  // },
+  
   TabNavigator: {
       screen: TabNavigator,
       navigationOptions: ({navigation}) => ({
@@ -37,6 +34,25 @@ const AppNavigation = createStackNavigator({
           
       }),
   },
+  
+  Terms: {
+    screen : Terms,
+    navigationOptions: ({navigation}) => ({
+      header: null
+    })
+  },
+  Preview: {
+    screen: Preview,
+    navigationOptions: ({navigation}) => ({
+      header: null
+    })
+  },
+  License: {
+    screen : License,
+    navigationOptions: ({navigation}) => ({
+      header: null
+    })
+  }
 })
 
 const AppContainor = createAppContainer(AppNavigation)

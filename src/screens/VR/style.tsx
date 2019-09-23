@@ -48,6 +48,14 @@ const styles = StyleSheet.create({
         height: vw(62),
         marginBottom: vh(1)
     },
+    content2: {
+        width: vw(100),
+        position: 'absolute',
+        height: vw(40),
+        top: 0,
+        backgroundColor: '#fff',
+        opacity: 0
+    },
     content: {
         position: 'absolute',
         bottom: 0,

@@ -30,6 +30,12 @@ export const DefaultSetting = (props: Iprops) => {
         alert('로그인 화면으로 돌아갑니다.')
         props.navigation.replace('LoginScreen')
     }
+    function goLicense () {
+        props.navigation.push('License')
+    }
+    function goTerm () {
+        props.navigation.push('Terms')
+    }
     return (
         <View style = {[defaultStyle.container, defaultStyle.back]}>
             <View style = { guest.contentBox}>
@@ -49,19 +55,33 @@ export const DefaultSetting = (props: Iprops) => {
                         <Text style= {[guest.menuText, { marginRight: vw(2)}]}>KR</Text>
                     </View>
                     <View style = { guest.noLineBox}>
-                        <Text style = {guest.menuText}>이용약관</Text>
+                        <TouchableOpacity
+                            onPress = { () => {
+                                goTerm()
+                            }}
+                        >
+                            <Text style = {guest.menuText}>이용약관</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style = { guest.lineBox}>
-                        <Text style = {guest.menuText}>푸쉬 알림 설정</Text>
+                        <TouchableOpacity
+                            onPress = { () => {
+                                goLicense()
+                            }}
+                        >
+                            <Text style = {guest.menuText}>라이센스</Text>
+                        </TouchableOpacity>
                     </View>
                     <View 
                         style = { guest.noLineBox} 
                     >
-                        <Text 
+                        <TouchableOpacity 
                             onPress = { ()=> {
                                 logOut()
                             }}
-                            style = {[guest.menuText, { color : '#ff4141'}]}>로그아웃</Text>
+                        >
+                            <Text style = {[guest.menuText, { color : '#ff4141'}]}>로그아웃</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

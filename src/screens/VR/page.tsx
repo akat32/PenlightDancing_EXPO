@@ -14,7 +14,7 @@ import {
 
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button, ThemeProvider } from 'react-native-elements';
-
+import { Thumbnail } from 'react-native-thumbnail-video';
 import { defaultStyle } from '../defaultStyles'
 import { styles } from './style'
 
@@ -35,47 +35,11 @@ const data = [
         artist: 'BTS',
         BPM: '110'
     },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    },
-    {
-        title : 'Not Today (Demo.var)',
-        difficulty: 'Easy',
-        artist: 'BTS',
-        BPM: '110'
-    }
 ]
 export default class VRScreen extends React.Component<Iprops, Istate> {
     render() {
         return (
-            <ScrollView showsVerticalScrollIndicator = {false}>
+            <ScrollView showsVerticalScrollIndicator = {false} style = {{ flex: 1, backgroundColor :'#0b141a'}}>
             <View style = {[ defaultStyle.container, defaultStyle.backColor ]} >
                 <View style = {styles.tutorial}>
                     <Image style = { styles.backImg} source = { require('../../../assets/beat.jpg')}/>
@@ -106,6 +70,7 @@ export default class VRScreen extends React.Component<Iprops, Istate> {
                         })
                     }
                 </SafeAreaView>
+                
             </View>
             </ScrollView>
         )
@@ -120,11 +85,13 @@ interface ItemProps {
 }
 const Item = (props: ItemProps) => {
     return (
-        <TouchableOpacity  onPress = { () => props.navigation.replace('Preview')}>
+        <TouchableOpacity  onPress = { () => props.navigation.push('Preview')}>
         <View style = {styles.contentBox}>
-            <Image style = { styles.backImg} source = { require('../../../assets/KakaoTalk_20190920_221548778.png')}/>
+            {/* <Image style = { styles.backImg} source = { require('../../../assets/KakaoTalk_20190920_221548778.png')}/> */}
+            <Thumbnail showPlayIcon = { false } style = { styles.backImg} url="https://www.youtube.com/watch?v=9DwzBICPhdM" />
+            <View style = { styles.content2}/>
             <View style = { styles.content}>
-                    <View style = {{flex: 1}}/>
+                <View style = {{flex: 1}}/>
 
                 <View style = { styles.contentTextBox}>
                     <Text style = {styles.contentB}>{props.title}</Text>
