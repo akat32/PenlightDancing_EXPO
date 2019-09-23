@@ -9,7 +9,7 @@ import {
     SafeAreaView,
     FlatList,
     ScrollView,
-    
+    Linking
 } from 'react-native'
 
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -41,13 +41,25 @@ export default class VRScreen extends React.Component<Iprops, Istate> {
         return (
             <ScrollView showsVerticalScrollIndicator = {false} style = {{ flex: 1, backgroundColor :'#0b141a'}}>
             <View style = {[ defaultStyle.container, defaultStyle.backColor ]} >
+                <TouchableOpacity style = {  styles.tutorial} onPress = { () => {
+                    Linking.canOpenURL("https://www.youtube.com/watch?v=peZmhx5Iupw").then(supported => {
+                        if (supported) {
+                            return Linking.openURL("https://www.youtube.com/watch?v=peZmhx5Iupw");
+                        } else {
+                            return Linking.openURL("https://www.youtube.com/watch?v=peZmhx5Iupw");
+                        }
+                    })
+                }}>
                 <View style = {styles.tutorial}>
-                    <Image style = { styles.backImg} source = { require('../../../assets/beat.jpg')}/>
+                    {/* <Image style = { styles.backImg} source = { require('../../../assets/beat.jpg')}/> */}
+                    <Thumbnail showPlayIcon = { false } style = { styles.backImg} url="https://www.youtube.com/watch?v=peZmhx5Iupw" />
+                    <View style = { styles.content2}/>
                     <View style = { styles.textBox}>
                         <Text style = { styles.title}>플레이 튜토리얼</Text>
                         <Text style = { styles.index}>Penlight Dancing의 기본 조작 방법을 익혀보세요.</Text>
                     </View>
                 </View>
+                </TouchableOpacity>
                 <View style = { styles.previewContent}>
                     <Text style = { styles.title}>채보 프리뷰</Text>
                     <Text style = { styles.index}>게임 하기 전 플레이 할 음악의 채보를 확인해보세요.</Text>

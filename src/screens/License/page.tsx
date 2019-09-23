@@ -88,7 +88,7 @@ https://github.com/facebook/react/blob/master/LICENSE{"\n"}
 react-native{"\n"}
 https://github.com/facebook/react-native/blob/master/LICENSE{"\n"}
 react-native-expo-viewport-units{"\n"}
-https://github.com/joetakara/react-native-expo-viewport-units/blob/master/LICENSE{"\n"}
+https://github.com/joetakara/react -native-expo-viewport-units/blob/master/LICENSE{"\n"}
 react-native-elements{"\n"}
 https://github.com/react-native-training/react-native-elements/blob/next/LICENSE{"\n"}
 react-native-thumbnail-video{"\n"}
@@ -99,7 +99,8 @@ react-navigation-tabs{"\n"}
 https://github.com/react-navigation/tabs/blob/master/LICENSE.md{"\n"}
 react-navigation-stack{"\n"}
 https://github.com/react-navigation/stack/blob/master/LICENSE.md{"\n"}
-                            </Text>
+{"\n"} All MIT License {"\n"}
+                           </Text>
                         </ScrollView>
                     </View>
                 </View>

@@ -81,7 +81,7 @@ export default class Preview extends React.Component<Iprops, Istate> {
                 <PreviewHeader navigation = { this.props.navigation}/>
                 <View style = {{ position : 'relative', flex: 1}}>
                     <View style = { styles.youtubeSize}>
-                        <Thumbnail showPlayIcon = { false } style= {{ width: '100%', height: '100%' }}  url="https://www.youtube.com/watch?v=9DwzBICPhdM" />
+                        <Thumbnail showPlayIcon = { false } style= {{ width: '100%', height: '100%' }}  url="https://www.youtube.com/watch?v=BeMf6YW30hE" />
             
                     </View>
                     <View style = { styles.info }>
